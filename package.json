@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/skysaver00/Youtube_Coding#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nvm": "0.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0"
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0"
   }
 }
