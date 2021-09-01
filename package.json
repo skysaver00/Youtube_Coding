@@ -1,3 +1,23 @@
 {
-    "name": "youtube"
+  "name": "youtube_clone",
+  "version": "1.0.0",
+  "description": "Cloning Youtube",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skysaver00/Youtube_Coding.git"
+  },
+  "author": "Young Woo Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skysaver00/Youtube_Coding/issues"
+  },
+  "homepage": "https://github.com/skysaver00/Youtube_Coding#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
