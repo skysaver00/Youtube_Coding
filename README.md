@@ -30,3 +30,14 @@ dependencies든, devDependencies든 모두 node_modules 폴더에 설치가 된�
 **하지만,** 이 구분은 어떤 패키지가 어떤 일을 하는지 구분해주기 위해 따로 쓰는 것이다.   
 **devDependencies는 우리와 같은 개발자를 위해 필요한 패키지를 모아둔 곳이다.**   
 **dependencies는 우리의 프로젝트가 작동하는데 필요한 패키지를 모아둔 곳이다.**   
+babel.config.json은 preset을 작성한다. preset는 babel을 위한 플러그인이다.   
+preset-env는 최신 자바스크립트를 이용할 수 있게 해준다.
+   
+## 2.4 babel-node index.js는 node.js가 돌아가면서 babel도 같이 적용되서 실행이 되게 해준다.
+이렇게 해서 최신 자바스크립트를 실행할 수 있다.   
+npm run dev해서 실행해주면 된다.   
+지금까지는 내가 코드를 수정할 때마다 다시 코드를 실행시켜야 했다.
+저장하고 다시 실행해야한다. 이렇게 하면 매우 귀찮기 때문에 **nodemon**을 쓸 것이다.
+파일이 수정되면 nodemon이 모든걸 다시 실행시켜준다.   
+--exec옵션 뒤에 babel-node를 두면 된다. 이제 콘솔이 죽지않고 nodemon이 자동드로 다시 시작시켜 준다.   
+또한 babel-node가 node를 대신하고 있다. 이제 매번 npm을 할 필요가 없어진다.   
