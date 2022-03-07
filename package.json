@@ -2,7 +2,9 @@
   "name": "youtube_coding",
   "version": "1.0.0",
   "description": "HTML, CSS, Javascript, Node.js",
-  "main": "index.js",
+  "scripts": {
+    "win": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skysaver00/Youtube_Coding.git"
@@ -12,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/skysaver00/Youtube_Coding/issues"
   },
-  "homepage": "https://github.com/skysaver00/Youtube_Coding#readme"
+  "homepage": "https://github.com/skysaver00/Youtube_Coding#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
