@@ -17,5 +17,9 @@
   "homepage": "https://github.com/skysaver00/Youtube_Coding#readme",
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11"
   }
 }
