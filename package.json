@@ -1,0 +1,16 @@
+{
+  "name": "youtube_coding",
+  "version": "1.0.0",
+  "description": "HTML, CSS, Javascript, Node.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skysaver00/Youtube_Coding.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skysaver00/Youtube_Coding/issues"
+  },
+  "homepage": "https://github.com/skysaver00/Youtube_Coding#readme"
+}
