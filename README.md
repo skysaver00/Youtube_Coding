@@ -69,3 +69,9 @@ request는 **브라우저가 URL을 요청하는 것**이다.
 하지만 console.log()만 해주기 때문에 응답이 없어 계속 무한 반복이라고 생각하면 된다.   
 사용자가 원하는 걸 요청할때, **사용자가 직접 get request하는 것**이 아니고, **브라우저가 get request를 보낸다고 생각하면 된다.**   
    
+## 3.3 Argument로 request object, response object를 선언해서 handle할 수 있다.
+home으로 get request가 오면, express는 home에다가 request, response object를 넣어준다. 이게 express가 해주는 일이다.   
+사용자는 request를 받는다 -> 브라우저는 request를 보내게 된다. -> root 페이지에 대한 request를 받으면 응답해주면 된다.
+따라서 사용자는 **request를 보내고, response를 받고**, 서버는 **request를 받고, response를 보내주고** 해주면 된다.   
+   
+## 3.4
