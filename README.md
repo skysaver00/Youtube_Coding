@@ -146,3 +146,14 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 #### 이 controller에서 로그인, 로그아웃, 업로드, 다운로드 모든 것을 할 수 있다.
 #### req, res가 아니어도 상관은 없다. x, y라는 이름이어도 상관없고, 위치가 중요한 것이다.
 #### 첫번째는 request, 두번째는 response, 세번째 이후는 next라는 것을 알고있으면 된다.
+
+   
+## 3.9 Middleware RECAP
+#### 미들웨어는 request와 response의 중간에 있다.
+#### controller === Middleware이다. next가 사용되면 그 컨트롤러는 Middleware라고 말할 수 있다.
+#### 먼저 app.get()에서 Middleware를 보고 Middleware는 next()로 다음 controller에게 넘겨주는 것이다.
+#### Middleware는 마음껏 쓸 수 있다.
+#### 마지막에 response해주는 애만 Finalware라고 부르고 중간에 있는 controller는 다음 controller에게 미루는 것이다.
+#### 순서와 관계가 있기 때문에, req, res, next이 순서대로 오는 것을 기억해야한다.
+#### req가 쓰이지 않는다고, res, next이렇게 해버리면 res는 첫번째로 오기 때문에 req의 파라미터로 인식될 것이다.
+#### 코드의 순서에 따라 Middleware는 다르게 적용될 수 있다. login에만 적용되고, home에는 적용이 안될 수 있다.
