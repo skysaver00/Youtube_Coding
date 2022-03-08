@@ -80,4 +80,17 @@ Express는 request, response, router등 이 3가지로 모든 작업을 해낼 �
 router는 URL등을 정리해주는 것이다.   
 **Express는 request를 받고 response해주는 것이라는 것을 명심하자.** 이걸로 html, json, 텍스트 모두를 보낼 수 있다.   
    
-## 
+## 3.5 Middleware는 중간에 있는 소프트웨어라는 뜻이다. 무엇의 중간에 있는가?가 중요하다.
+**Middleware는 request와 response의 사이에 있다.**   
+**브라우저가 request하고난 뒤, 서버가 response하기 전에 그 사이에 Middleware가 있는 것이다.**   
+모든 Middleware는 handler이고, 모든 handler는 Middleware이다. handler === controller이다. MVC패턴을 기억하자.   
+controller에는 req, res말고 next라는 다른 파라미터가 존재한다.   
+res.end()대신 next()를 사용하면, Express가 handleHome의 다음의 함수를 호출한다.   
+브라우저는 홈페이지를 가져오려 한다. -> gossipMiddleware를 호출한다 -> console.log()실행뒤, next()함수 호출 -> 다음 함수인 handleHome 호출.   
+이렇게 되면 handleHome는 Finalware가 된다.   
+**모든 controller가 Middleware가 될 수 있다.**   
+Express가 request를 확인하면 handler를 호출하게 된다. -> 두개의 handler가 있고 하나는 Middleware인 것이다.   
+handleHome 다음에는 아무것도 없으니까 Finalware가 된다. 따라서 ***next 함수를 호출해야 Middleware라는 것을 알 수 있다.***
+당연히 return을 보면 다음 줄 부터는 실행을 하지 않는다.   
+**Middleware는 request에 응답하지 않는다. request를 지속시켜주는데, 그 사이에 무언갈 하고, 다음 함수에게 넘기는 함수이다.**   
+**request에 응답하게 되면 Finalware가 된다.**
