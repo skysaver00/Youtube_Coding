@@ -119,5 +119,17 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 ### babel-node를 사용하려면 babel.config.json에 babel에 추가하고 싶은 플러그인을 추가해야 한다.
 ### 예를들어 최신 javascript를 사용하게 해주는 preset-env를 사용하기 위해 preset 플러그인을 추가하면 된다.
    
-
+   
 ## 3.8 Server RECAP
+### 서버는 항상 켜져있고, 인터넷에 연결되있고, request를 받는 컴퓨터이다.
+### 내가 naver.com을 가려고 하면, 브라우저가 naver.com에 request를 보내는 것이다. 그럼 naver.com 서버가 response를 보내주는 것이다.
+### 사용자는 브라우저를 통해 request를 보내게 된다.
+### 사용자의 행동을 listening하는 서버만 request를 보낼 수 있다. 따라서 서버는 해당 동작을 할 수 있게 개발자가 만들어 줘야 한다.
+### import express from "express"를 통해 Express를 가져온다.
+### app변수를 만들어 express함수를 호출한다. 그럼 바로 express를 사용할 수 있게된다.
+### 서버에서 모든 포트에 대해 listen할 수 없기 때문에 app.listen으로 특정 PORT를 들을 수 있게 해줘야 한다.
+### PORT는 창문과 같은 개념이다. PORT 4000은 4000번째 창문이라고 생각하면 되고, request를 보낼때 해당 포트로 request를 보내는 것이다.
+### request를 전달하려면 URL을 사용해야한다. 여기서 app.get()가 사용된다.
+### 이 URL의 모음을 routes라고 부른다.
+### http의 method는 get, post, delete등이 있다.
+### app.get()에는 URL, handler가 필요하다.
