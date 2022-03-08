@@ -133,3 +133,16 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 ### 이 URL의 모음을 routes라고 부른다.
 ### http의 method는 get, post, delete등이 있다.
 ### app.get()에는 URL, handler가 필요하다.
+   
+   
+## 3.8 Controller RECAP
+### controller에는 request와 response가 반드시 있어야 한다. Middleware의 경우 next도 있을 수 있다.
+### Express API에서 모든 method를 확인할 수 있다. <https://expressjs.com/en/api.html>
+### response에는 대표적으로 send, end, redirect method등이 있다.
+### Arrow function에는 기본적으로 return이 포함되어있다.
+### req는 request에 대한 정보를 주고, res에는 request에 어떻게 응답하는지의 정보가 담겨있다.
+### **뭐가 됬든 request에는 response가 필요하다.**
+### 따라서 route를 만들고 controllers를 만드는 것이 필요하다.
+### 이 controller에서 로그인, 로그아웃, 업로드, 다운로드 모든 것을 할 수 있다.
+### req, res가 아니어도 상관은 없다. x, y라는 이름이어도 상관없고, 위치가 중요한 것이다.
+### 첫번째는 request, 두번째는 response, 세번째 이후는 next라는 것을 알고있으면 된다.
