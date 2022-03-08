@@ -135,7 +135,7 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 #### app.get()에는 URL, handler가 필요하다.
    
    
-## 3.8 Controller RECAP
+## 3.9 Controller RECAP
 #### controller에는 request와 response가 반드시 있어야 한다. Middleware의 경우 next도 있을 수 있다.
 #### Express API에서 모든 method를 확인할 수 있다. <https://expressjs.com/en/api.html>
 #### response에는 대표적으로 send, end, redirect method등이 있다.
@@ -148,7 +148,7 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 #### 첫번째는 request, 두번째는 response, 세번째 이후는 next라는 것을 알고있으면 된다.
 
    
-## 3.9 Middleware RECAP
+## 3.10 Middleware RECAP
 #### 미들웨어는 request와 response의 중간에 있다.
 #### controller === Middleware이다. next가 사용되면 그 컨트롤러는 Middleware라고 말할 수 있다.
 #### 먼저 app.get()에서 Middleware를 보고 Middleware는 next()로 다음 controller에게 넘겨주는 것이다.
@@ -157,3 +157,11 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 #### 순서와 관계가 있기 때문에, req, res, next이 순서대로 오는 것을 기억해야한다.
 #### req가 쓰이지 않는다고, res, next이렇게 해버리면 res는 첫번째로 오기 때문에 req의 파라미터로 인식될 것이다.
 #### 코드의 순서에 따라 Middleware는 다르게 적용될 수 있다. login에만 적용되고, home에는 적용이 안될 수 있다.
+
+## 3.11 Morgan은 node.js용 request logger Middleware이다.
+설치해서 쓰든 직접만들든 사용 방법은 매우 똑같다.   
+두개의 차이점은 morgan이 좀 더 정교하다는 것이다.   
+morgan은 GET, path, status code, 더 많은 정보를 한번만에 다 보여줄 수 있다.   
+dev말고 combined를 쓰면 시간, method, http 버전, 브라우저, 운영체제등을 더 많이 보여줄 수 있다.   
+dev, combined, short, tiny 등등 많다.   
+morgan도 next가 있다. 소스코드를 확인해보면 request, respons, next 모두 확인할 수 있다.   
