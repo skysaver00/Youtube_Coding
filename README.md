@@ -74,4 +74,5 @@ home으로 get request가 오면, express는 home에다가 request, response obj
 사용자는 request를 받는다 -> 브라우저는 request를 보내게 된다. -> root 페이지에 대한 request를 받으면 응답해주면 된다.
 따라서 사용자는 **request를 보내고, response를 받고**, 서버는 **request를 받고, response를 보내주고** 해주면 된다.   
    
-## 3.4
+## 3.4 Express는 크개 3개의 기능을 가지고 있다. request, response가 대표적이다. response에는 cookie등도 있다.
+res.send()를 통해 html이나, 텍스트등을 보낼 수 있다.

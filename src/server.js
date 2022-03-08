@@ -2,11 +2,11 @@ import express from "express";
 const app = express(); //application 생성
 
 const handleHome = (req, res) => {
-    return res.send("I still love you");
+    return res.send("<h1>I still love you</h1>");
 };
 
 const handleLogin = (req, res) => {
-    return res.send("Login here.")
+    return res.send({ message: "Login here." })
 }
 
 app.get("/", handleHome) //누군가 /으로 request를 보내면, callback해주겠다는 뜻.
