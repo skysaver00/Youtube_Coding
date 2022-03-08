@@ -94,3 +94,14 @@ handleHome 다음에는 아무것도 없으니까 Finalware가 된다. 따라서
 당연히 return을 보면 다음 줄 부터는 실행을 하지 않는다.   
 **Middleware는 request에 응답하지 않는다. request를 지속시켜주는데, 그 사이에 무언갈 하고, 다음 함수에게 넘기는 함수이다.**   
 **request에 응답하게 되면 Finalware가 된다.**
+
+## 3.6 app.get()말고, app.use()도 있다!
+**app.use()는 global Middleware를 만들 수 있게 해준다.**   
+Middleware를 use하는게 먼저, 그다음의 URL의 get이 와야한다.   
+이렇게 하면 URL로 접속하면 Middleware가 작동되게 만들어준다!   
+request가 오면, Express는 모든 것을 위에서 아래 순으로 실행시켜준다. Javascript처럼 실행시켜준다.   
+Express는 우선, request를 받으면 Middleware를 출력하고, app.get()를 실행시켜준다.  
+app.get다음 app.use가 나오면 app.get의 URL로 접속하면 출력이 되지 않는다.   
+**순서는 큰 영향을 미치니까 매우 중요하다.**   
+**이를 응용하면 Middleware를 이용해서 어떤 경우에는 next로, 어떤 경우에는 접속을 제한하는 경우의 로직을 만들 수 있다.**   
+Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니까 이런 로직을 만들 수 있다.   
