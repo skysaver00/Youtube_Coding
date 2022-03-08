@@ -108,41 +108,41 @@ Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니�
 
 # 3.7 ~ 3.11 RECAP
 ## 3.7 Setup RECAP
-### package.json은 node.js 관련 정보를 담는 방법이다. 그냥 text이기 때문에 그냥 넣어도 상관 없다.
-### 다만 package.json의 어떤 Object를 넣으면 npm이 어떤 행동을 할 수 있게 해주는 것이 있다. 대표적으로 script가 있다.
-### script를 넣어줌으로써 npm run dev등을 돌릴 수 있다.
-### dependencies는 프로젝트가 돌아가기 위해 필요한 package이다. dependencies는 Express등이 들어가서 서버로 작동할 수 있게 만들어 준다.
-### npm install express를 입력하면 npm이 express를 다운받고 버전 정보를 확인해서 정보를 추가한다.
-### node_module에 설치가 된다. node_module을 공유할 필요없이 package.json만 주면 자동으로 필요한 것들을 설치하게 된다.
-### devDependencies와 dependencies의 차이는 개발자가 필요로 하는지, 해당 프로젝트에게 필요한지 구분하기 위하 체계적으로 나눠둔 것이다.
-### 둘 다 node_module에 설치되는 것은 똑같다.
-### babel-node를 사용하려면 babel.config.json에 babel에 추가하고 싶은 플러그인을 추가해야 한다.
-### 예를들어 최신 javascript를 사용하게 해주는 preset-env를 사용하기 위해 preset 플러그인을 추가하면 된다.
+#### package.json은 node.js 관련 정보를 담는 방법이다. 그냥 text이기 때문에 그냥 넣어도 상관 없다.
+#### 다만 package.json의 어떤 Object를 넣으면 npm이 어떤 행동을 할 수 있게 해주는 것이 있다. 대표적으로 script가 있다.
+#### script를 넣어줌으로써 npm run dev등을 돌릴 수 있다.
+#### dependencies는 프로젝트가 돌아가기 위해 필요한 package이다. dependencies는 Express등이 들어가서 서버로 작동할 수 있게 만들어 준다.
+#### npm install express를 입력하면 npm이 express를 다운받고 버전 정보를 확인해서 정보를 추가한다.
+#### node_module에 설치가 된다. node_module을 공유할 필요없이 package.json만 주면 자동으로 필요한 것들을 설치하게 된다.
+#### devDependencies와 dependencies의 차이는 개발자가 필요로 하는지, 해당 프로젝트에게 필요한지 구분하기 위하 체계적으로 나눠둔 것이다.
+#### 둘 다 node_module에 설치되는 것은 똑같다.
+#### babel-node를 사용하려면 babel.config.json에 babel에 추가하고 싶은 플러그인을 추가해야 한다.
+#### 예를들어 최신 javascript를 사용하게 해주는 preset-env를 사용하기 위해 preset 플러그인을 추가하면 된다.
    
    
 ## 3.8 Server RECAP
-### 서버는 항상 켜져있고, 인터넷에 연결되있고, request를 받는 컴퓨터이다.
-### 내가 naver.com을 가려고 하면, 브라우저가 naver.com에 request를 보내는 것이다. 그럼 naver.com 서버가 response를 보내주는 것이다.
-### 사용자는 브라우저를 통해 request를 보내게 된다.
-### 사용자의 행동을 listening하는 서버만 request를 보낼 수 있다. 따라서 서버는 해당 동작을 할 수 있게 개발자가 만들어 줘야 한다.
-### import express from "express"를 통해 Express를 가져온다.
-### app변수를 만들어 express함수를 호출한다. 그럼 바로 express를 사용할 수 있게된다.
-### 서버에서 모든 포트에 대해 listen할 수 없기 때문에 app.listen으로 특정 PORT를 들을 수 있게 해줘야 한다.
-### PORT는 창문과 같은 개념이다. PORT 4000은 4000번째 창문이라고 생각하면 되고, request를 보낼때 해당 포트로 request를 보내는 것이다.
-### request를 전달하려면 URL을 사용해야한다. 여기서 app.get()가 사용된다.
-### 이 URL의 모음을 routes라고 부른다.
-### http의 method는 get, post, delete등이 있다.
-### app.get()에는 URL, handler가 필요하다.
+#### 서버는 항상 켜져있고, 인터넷에 연결되있고, request를 받는 컴퓨터이다.
+#### 내가 naver.com을 가려고 하면, 브라우저가 naver.com에 request를 보내는 것이다. 그럼 naver.com 서버가 response를 보내주는 것이다.
+#### 사용자는 브라우저를 통해 request를 보내게 된다.
+#### 사용자의 행동을 listening하는 서버만 request를 보낼 수 있다. 따라서 서버는 해당 동작을 할 수 있게 개발자가 만들어 줘야 한다.
+#### import express from "express"를 통해 Express를 가져온다.
+#### app변수를 만들어 express함수를 호출한다. 그럼 바로 express를 사용할 수 있게된다.
+#### 서버에서 모든 포트에 대해 listen할 수 없기 때문에 app.listen으로 특정 PORT를 들을 수 있게 해줘야 한다.
+#### PORT는 창문과 같은 개념이다. PORT 4000은 4000번째 창문이라고 생각하면 되고, request를 보낼때 해당 포트로 request를 보내는 것이다.
+#### request를 전달하려면 URL을 사용해야한다. 여기서 app.get()가 사용된다.
+#### 이 URL의 모음을 routes라고 부른다.
+#### http의 method는 get, post, delete등이 있다.
+#### app.get()에는 URL, handler가 필요하다.
    
    
 ## 3.8 Controller RECAP
-### controller에는 request와 response가 반드시 있어야 한다. Middleware의 경우 next도 있을 수 있다.
-### Express API에서 모든 method를 확인할 수 있다. <https://expressjs.com/en/api.html>
-### response에는 대표적으로 send, end, redirect method등이 있다.
-### Arrow function에는 기본적으로 return이 포함되어있다.
-### req는 request에 대한 정보를 주고, res에는 request에 어떻게 응답하는지의 정보가 담겨있다.
-### **뭐가 됬든 request에는 response가 필요하다.**
-### 따라서 route를 만들고 controllers를 만드는 것이 필요하다.
-### 이 controller에서 로그인, 로그아웃, 업로드, 다운로드 모든 것을 할 수 있다.
-### req, res가 아니어도 상관은 없다. x, y라는 이름이어도 상관없고, 위치가 중요한 것이다.
-### 첫번째는 request, 두번째는 response, 세번째 이후는 next라는 것을 알고있으면 된다.
+#### controller에는 request와 response가 반드시 있어야 한다. Middleware의 경우 next도 있을 수 있다.
+#### Express API에서 모든 method를 확인할 수 있다. <https://expressjs.com/en/api.html>
+#### response에는 대표적으로 send, end, redirect method등이 있다.
+#### Arrow function에는 기본적으로 return이 포함되어있다.
+#### req는 request에 대한 정보를 주고, res에는 request에 어떻게 응답하는지의 정보가 담겨있다.
+#### **뭐가 됬든 request에는 response가 필요하다.**
+#### 따라서 route를 만들고 controllers를 만드는 것이 필요하다.
+#### 이 controller에서 로그인, 로그아웃, 업로드, 다운로드 모든 것을 할 수 있다.
+#### req, res가 아니어도 상관은 없다. x, y라는 이름이어도 상관없고, 위치가 중요한 것이다.
+#### 첫번째는 request, 두번째는 response, 세번째 이후는 next라는 것을 알고있으면 된다.
