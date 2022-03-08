@@ -105,3 +105,19 @@ app.get다음 app.use가 나오면 app.get의 URL로 접속하면 출력이 되�
 **순서는 큰 영향을 미치니까 매우 중요하다.**   
 **이를 응용하면 Middleware를 이용해서 어떤 경우에는 next로, 어떤 경우에는 접속을 제한하는 경우의 로직을 만들 수 있다.**   
 Middleware는 Controller로든, Middleware로든 모두 작동이 가능하니까 이런 로직을 만들 수 있다.   
+
+# 3.7 ~ 3.11 RECAP
+## 3.7 Setup RECAP
+### package.json은 node.js 관련 정보를 담는 방법이다. 그냥 text이기 때문에 그냥 넣어도 상관 없다.
+### 다만 package.json의 어떤 Object를 넣으면 npm이 어떤 행동을 할 수 있게 해주는 것이 있다. 대표적으로 script가 있다.
+### script를 넣어줌으로써 npm run dev등을 돌릴 수 있다.
+### dependencies는 프로젝트가 돌아가기 위해 필요한 package이다. dependencies는 Express등이 들어가서 서버로 작동할 수 있게 만들어 준다.
+### npm install express를 입력하면 npm이 express를 다운받고 버전 정보를 확인해서 정보를 추가한다.
+### node_module에 설치가 된다. node_module을 공유할 필요없이 package.json만 주면 자동으로 필요한 것들을 설치하게 된다.
+### devDependencies와 dependencies의 차이는 개발자가 필요로 하는지, 해당 프로젝트에게 필요한지 구분하기 위하 체계적으로 나눠둔 것이다.
+### 둘 다 node_module에 설치되는 것은 똑같다.
+### babel-node를 사용하려면 babel.config.json에 babel에 추가하고 싶은 플러그인을 추가해야 한다.
+### 예를들어 최신 javascript를 사용하게 해주는 preset-env를 사용하기 위해 preset 플러그인을 추가하면 된다.
+   
+
+## 3.8 Server RECAP
