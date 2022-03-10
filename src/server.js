@@ -4,19 +4,31 @@ const PORT = 4000
 const app = express(); //application 생성
 
 const logger = morgan("dev")
+app.use(logger);
 
-const handleHome = (req, res) => {
-    return res.send("I love Middlewares!");
-    //next는 다음 함수를 호출한다.
-};
+const globalRouter = express.Router(); //라우터 생성
+
+const handleHome = (req, res) => res.send("Home");
+globalRouter.get("/", handleHome);
+
+const userRouter = express.Router();
+
+const handleEditUser = (req, res) => res.send("Edit User");
+userRouter.get("/edit", handleEditUser)
+
+const videoRouter = express.Router();
+
+const handleWatchVideo = (req, res) => res.send("Watch Video");
+videoRouter.get("/watch", handleWatchVideo)
+
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/users", userRouter);
+
 
 const handleLogin = (req, res) => {
     return res.send("Hello login!")
 }
-
-app.use(logger) //순서는 여기에서 중요하다!
-app.get("/", handleHome) //누군가 /으로 request를 보내면, callback해주겠다는 뜻.
-app.get("/login", handleLogin) //누군가 /으로 request를 보내면, callback해주겠다는 뜻.
 
 const handleListening = () => console.log(`✅ Server listening on port http://localhost:${PORT} 🚀`)
 
